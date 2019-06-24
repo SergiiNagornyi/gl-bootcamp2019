@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class NotePadInitialTests {
 
     WebDriver driver;
@@ -16,19 +17,20 @@ public class NotePadInitialTests {
     public void openBrowser () {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        np = NotePad (driver);
+
+        np = new NotePad(driver);
     }
 
     @Test
-    public void calculatorTest () {
-        String note = "Note content\nLine2\nLine3";
+    public void notepadTest () {
+        String note = "Note content\nLine2\nLine 3";
+        np.open()
+                .setTitle("My New Note")
+                .setContent(note)
+                .save();
 
-        np.open().
-                setTitle("My new Note").
-                setContent(note).
-                save().addContent("Ignat").save();
+        Assert.assertEquals(note, np.getNoteContent());
 
-        Assert.assertArrayEquals(note, np.getNoteContent());
     }
 
     @After
