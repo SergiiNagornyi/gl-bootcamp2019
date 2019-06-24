@@ -21,6 +21,7 @@ public class homeWork3 {
         }
 
         @Test
+        //@DisplayName("GL-1006:F-180 Logging with correct Email and Password")
         public void notepadHomeTest () {
             String textForLogin = " - free online notepad";
             String email = "serzshik@bigmir.net";
