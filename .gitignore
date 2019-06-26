@@ -19,6 +19,6 @@ hs_err_pid*
 out/
 .idea_modules/
 
-# Idea files
+## Idea files
 .idea
 *.iml
